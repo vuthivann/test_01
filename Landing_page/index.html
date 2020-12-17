@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Mulish&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
     <header class="l_header">
@@ -17,18 +18,19 @@
         <img src="./assets/logo.png" alt="logo" />
       </div>
 
-      <nav class="c_header__links">
-        <ul class="c_header__menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="#">Find a doctor</a></li>
-          <li><a href="#">Apps</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">About us</a></li>
-        </ul>
-      </nav>
-      <div class="c_menu__btn">
-        <div class="c_menu__btn___lines"></div>
+      <div id="mySidenav" class="sidenav">
+        <div class="sideNavHeader">
+          <img src="./assets/logo.png" alt="logo" />
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size: 28px;">&times;</a>
+        </div>
+        <a href="#">Home</a>
+        <a href="#">Find doctors</a>
+        <a href="#">Apps</a>
+        <a href="#">Testimonials</a>
+        <a href="#">About us</a>
       </div>
+      
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
     </header>
     <script src="./index.js" defer></script>
   </body>
