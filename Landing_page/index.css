@@ -1,0 +1,131 @@
+body {
+  box-sizing: border-box;
+  margin: 56px auto;
+  padding: 0;
+  font-family: Mulish;
+  max-width: 70%;
+}
+
+.l_header {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul li {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ffffff;
+}
+
+header nav ul li a {
+  color: #8f8a99;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  color: #1f3514;
+  transition: 0.5s;
+}
+
+/* moblie display */
+.c_menu__btn {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.c_menu__btn___lines,
+.c_menu__btn___lines::before,
+.c_menu__btn___lines::after {
+  width: 1.5rem;
+  height: 0.1rem;
+  background-color: #111111;
+  transition: all 0.5s ease-in-out;
+}
+
+.c_menu__btn___lines::before,
+.c_menu__btn___lines::after {
+  content: "";
+  position: absolute;
+}
+
+.c_menu__btn___lines::before {
+  transform: translateY(-0.5rem);
+}
+
+.c_menu__btn___lines::after {
+  transform: translateY(0.5rem);
+}
+
+.c_menu__btn.open .c_menu__btn___lines {
+  transform: translateX(2rem);
+  background-color: transparent;
+}
+
+.c_menu__btn.open .c_menu__btn___lines::before {
+  transform: rotate(45deg) translate(-1.5rem, 1.5rem);
+}
+
+.c_menu__btn.open .c_menu__btn___lines::after {
+  transform: rotate(-45deg) translate(-1.5rem, -1.5rem);
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .c_menu__btn {
+    justify-content: flex-end;
+    display: flex;
+  }
+
+  .c_header__menu {
+    /*display: none;*/
+    flex-direction: column;
+    margin-top: 150px;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(100%);
+    padding: 0px 100px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .c_header__links .c_header__menu.open {
+    /*display: block;*/
+    transform: translateX(0);
+  }
+
+  .c_header__links .c_header__menu.hide {
+    transform: translateX(100%);
+  }
+
+  .c_header__menu li {
+    opacity: 0;
+  }
+
+  .c_header__links .c_header__menu li {
+    display: block;
+    padding: 25px;
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
